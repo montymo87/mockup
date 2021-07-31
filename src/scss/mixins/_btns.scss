@@ -1,0 +1,46 @@
+@mixin st_btn() {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+
+	text-align: center;
+	white-space: nowrap;
+
+	cursor: pointer;
+
+	&:hover, &:focus {
+		text-decoration: none;
+	}
+}
+
+//color extends
+%transparent_btn_1 {
+	color: var(--color-black);
+	font-weight: 300;
+
+	background-color: transparent;
+	transition: .3s ease;
+
+	border: 1px solid var(--color-black);
+
+	@include st_btn();
+
+	&:hover {
+		color: rgb(103, 103, 179);
+		background-color: rgb(243, 237, 237);
+	}
+
+}
+
+//size extends
+%btn_size_1 {
+	height: 36px;
+	min-width: 160px;
+	padding: 0 20px;
+
+	line-height: 56px;
+	font-size: 18px;
+	letter-spacing: .19px;
+
+	border-radius: 16px;
+}

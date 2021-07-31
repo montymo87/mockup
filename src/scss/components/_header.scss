@@ -1,0 +1,74 @@
+@import '../mixins/effects';
+
+.header {
+  padding: 15px 0;
+}
+
+.header-row-in {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+
+  &.center_mod {
+    justify-content: center;
+  }
+
+  &.line_mod {
+    border-top: 1px solid var(--color-black);
+  }
+
+  &.offset_mod {
+    padding: 0 0 10px 0;
+  }
+}
+
+.logo_w {
+  width: 200px;
+  height: auto;
+}
+
+.logo {
+  width: 100%;
+  height: 100%;
+}
+
+.header__info {
+  flex-grow: 1;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 0 15px;
+}
+
+.header__callback {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.header__phon {
+  margin-bottom: 10px;
+}
+
+.nav {
+}
+
+.nav__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav__item {
+  padding: 5px 16px;
+
+  @include btn-effect-underline;
+}
+
+.nav__link {
+  color: var(--color-black);
+}
