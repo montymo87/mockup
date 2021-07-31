@@ -5,7 +5,8 @@
   * @returns {number}
   */
 
- window.addEventListener('DOMContentLoaded', (event) => {
+ (($, window, document, undefined) => {
+  $(() => {
 
   // remove jquery and dev_function after work
   function widget() {
@@ -15,18 +16,72 @@
   // remove jquery and dev_function after work
 
 
-  function initSlider() {
+  function initSliderHero() {
     const swiper = new Swiper('.hero-slider', {
       // Optional parameters
       // slidesPerView: 1,
       clickable: true,
 
-      // If we need pagination
       pagination: {
         el: '.swiper-pagination',
       },
 
-      // Navigation arrows
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+  }
+
+  function initSliderEquipment() {
+    const swiper = new Swiper('.equipment-slider', {
+      // Optional parameters
+      slidesPerView: 1,
+      spaceBetween: 20,
+      clickable: true,
+      breakpoints: {
+        // when window width is >= 640px
+        640: {
+          slidesPerView: 2,
+        },
+
+        1023: {
+          slidesPerView: 3,
+        }
+      },
+
+      pagination: {
+        el: '.swiper-pagination',
+      },
+
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+  }
+
+  function initSliderServices() {
+    const swiper = new Swiper('.services-slider', {
+      // Optional parameters
+      slidesPerView: 1,
+      spaceBetween: 20,
+      clickable: true,
+      breakpoints: {
+        // when window width is >= 640px
+        640: {
+          slidesPerView: 2,
+        },
+
+        1023: {
+          slidesPerView: 3,
+        }
+      },
+
+      pagination: {
+        el: '.swiper-pagination',
+      },
+
       navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
@@ -46,7 +101,9 @@
    * Initializes logic of a page.
    */
   function init() {
-      initSlider();
+      initSliderHero();
+      initSliderEquipment();
+      initSliderServices();
       initMenu();
       initPopup();
       widget()
@@ -54,3 +111,4 @@
 
   init();
 });
+})(window['jQuery'], window, document);

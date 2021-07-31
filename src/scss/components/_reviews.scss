@@ -1,0 +1,23 @@
+.reviews {
+}
+.section__title {
+}
+.center-mod {
+}
+.reviews__list-w {
+}
+.reviews__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+
+  margin: 0 -20px -20px 0;
+}
+.reviews__item {
+  width: calc(100% / 3);
+
+  min-width: 300px;
+
+  padding: 0 20px 20px 0;
+}
