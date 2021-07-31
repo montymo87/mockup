@@ -10,7 +10,7 @@
 
   // remove jquery and dev_function after work
   function widget() {
-    pageWidget(['index', 'newPage']);
+    pageWidget(['index', 'product_page']);
     getAllClasses('html', '.elements_list');
   }
   // remove jquery and dev_function after work
@@ -89,6 +89,34 @@
     });
   }
 
+  function initSliderSeeMore() {
+    const swiper = new Swiper('.see-more-slider', {
+      // Optional parameters
+      slidesPerView: 1,
+      spaceBetween: 20,
+      clickable: true,
+      breakpoints: {
+        // when window width is >= 640px
+        640: {
+          slidesPerView: 2,
+        },
+
+        1023: {
+          slidesPerView: 3,
+        }
+      },
+
+      pagination: {
+        el: '.swiper-pagination',
+      },
+
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+  }
+
   function initMenu() {
       // code
   }
@@ -104,6 +132,7 @@
       initSliderHero();
       initSliderEquipment();
       initSliderServices();
+      initSliderSeeMore();
       initMenu();
       initPopup();
       widget()

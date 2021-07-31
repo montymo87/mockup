@@ -30,6 +30,10 @@
 
 .section {
   padding: 30px 0;
+
+  &.mod-offset {
+    padding: 0;
+  }
 }
 
 .container {
@@ -55,7 +59,6 @@
 
 .section__descr {
 
-  line-height: 150%;
   color: var(--color-black);
 
   &.center-mod {
@@ -68,6 +71,10 @@
 
   &.limit-mod {
     max-width: 600px;
+  }
+
+  &.offset-mod {
+    margin-top: 30px;
   }
 }
 

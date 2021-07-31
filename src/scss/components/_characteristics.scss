@@ -1,0 +1,40 @@
+.characteristics__list-w {
+}
+
+.characteristics__list {
+  border: 1px solid var(--color-black);
+  margin: 0;
+}
+
+.characteristics__row {
+  &:nth-child(odd) {
+    background-color: rgb(222, 222, 230);
+  }
+
+  &.header-mod {
+    font-size: 18px;
+    font-weight: 600;
+  }
+}
+
+.characteristics__coll-w {
+  display: flex;
+  flex-direction: row;
+}
+
+.characteristics__coll {
+  width: 100%;
+  max-width: calc(100% / 2);
+  min-width: 100px;
+
+  padding:  10px;
+
+  border-left: 1px solid var(--color-black);
+
+  &:first-child {
+    border: none;
+  }
+}
+
+.characteristics__coll-val {
+}

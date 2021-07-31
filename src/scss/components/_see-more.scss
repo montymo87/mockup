@@ -1,0 +1,36 @@
+.see-more {
+}
+
+.see-more-slider {
+  height: 250px;
+}
+
+.see-more-slide {
+}
+
+.see-more-slide-in {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: 100%;
+}
+
+.see-more-slide__img-w {
+  width: 100%;
+  height: 200px;
+}
+
+.see-more-slide__img {
+  width: 100%;
+  height: 100%;
+}
+
+.see-more-slide__info {
+  position: relative;
+  z-index: 10;
+}
