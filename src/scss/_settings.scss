@@ -58,12 +58,6 @@ ul {
   cursor: pointer;
 }
 
-.container {
-  margin: 0 auto;
-  padding: 0 15px;
-  max-width: 1440px;
-}
-
 .js-focus-visible :focus:not(.focus-visible) {
   outline: none;
 }

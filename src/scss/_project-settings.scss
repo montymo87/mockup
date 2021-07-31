@@ -1,4 +1,4 @@
-.btn_base {
+.btn-base {
 	@extend %transparent_btn_1;
 	@extend %btn_size_1;
 }
@@ -26,5 +26,57 @@
     right: auto;
     left: 0;
   }
+}
 
+.section {
+  padding: 20px 0;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 15px;
+  max-width: 1440px;
+
+  &.offset-mod {
+  }
+}
+
+.section__title {
+
+  &.center-mod {
+    text-align: center;
+  }
+
+  &.width-mod {
+    width: 50%;
+  }
+}
+
+.section__descr {
+
+  &.center-mod {
+    text-align: center;
+  }
+
+  &.width-mod {
+    width: 50%;
+  }
+
+  &.limit-mod {
+    max-width: 600px;
+  }
+}
+
+.form-label {
+  margin-bottom: 10px;
+
+  &.label-v1 {
+    width: 100%;
+  }
+}
+
+.form-input {
+  // border: 0;
+  padding: 6px 14px;
+  width: 100%;
 }

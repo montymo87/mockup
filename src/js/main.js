@@ -16,9 +16,10 @@
 
 
   function initSlider() {
-    const swiper = new Swiper('.swiper-container', {
+    const swiper = new Swiper('.hero-slider', {
       // Optional parameters
-      loop: true,
+      // slidesPerView: 1,
+      clickable: true,
 
       // If we need pagination
       pagination: {
@@ -29,11 +30,6 @@
       navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
-      },
-
-      // And if we need scrollbar
-      scrollbar: {
-        el: '.swiper-scrollbar',
       },
     });
   }

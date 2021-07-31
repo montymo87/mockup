@@ -1,0 +1,43 @@
+.card {
+  padding: 0 20px 50px 0px;
+
+  width: calc(100% / 3);
+  min-width: 300px;
+}
+
+.card-in {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+
+
+}
+.card__img-w {
+  width: 100%;
+  height: 200px;
+
+  overflow: hidden;
+}
+.card__img {
+  width: 100%;
+  height: 100%;
+}
+.card__info-w {
+}
+.card-info {
+}
+.card-info__item {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+
+  padding: 0 0 10px 0;
+}
+.card-info__item-descr {
+  margin: 0 10px 0 0;
+}
+.card-info__item-val {
+}
+.btn-base {
+}
