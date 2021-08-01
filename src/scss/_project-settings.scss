@@ -7,7 +7,6 @@
   }
 }
 
-
 @mixin btn-effect-underline {
 
   transition: all .3s;
@@ -134,7 +133,6 @@
   cursor: pointer;
 
   &.footer-mod {
-    padding:  0 10px 20px 0px;
     transition: all ease 0.2s;
 
     @include mobile {
