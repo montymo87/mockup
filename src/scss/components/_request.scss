@@ -16,6 +16,10 @@
 .company__info {
   width: 60%;
 
+  &.requrst-mod {
+    width: 100%;
+  }
+
   @include mobile {
     width: 100%;
 
@@ -26,6 +30,10 @@
 .company__form {
   width: 40%;
   height: 100%;
+
+  &.requrst-mod {
+    width: 100%;
+  }
 
   @include mobile {
     width: 100%;
@@ -39,8 +47,13 @@
   align-items: center;
 
   height: 100%;
-
   padding: 0 15px;
+
+  &.requrst-mod {
+    padding: 0;
+    flex-direction: row;
+    justify-content: space-between;
+  }
 
   @include mobile {
     padding: 0;

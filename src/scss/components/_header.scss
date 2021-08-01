@@ -1,24 +1,51 @@
-@import '../mixins/effects';
+@import '../mixins';
 
 .header {
-  padding: 15px 0;
+  padding: 15px 0 0;
 }
 
 .header-row-in {
+  position: relative;
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
 
-  &.center_mod {
+  &.center-mod {
     justify-content: center;
   }
 
-  &.line_mod {
-    // border-top: 1px solid var(--color-black);
+  &.offset-mod {
+    padding: 0 0 10px 0;
   }
 
-  &.offset_mod {
-    padding: 0 0 10px 0;
+  &.nav-mod {
+    background: rgb(210, 207, 30);
+  }
+
+  @include tablet {
+    justify-content: space-between;
+  }
+
+  &.mobile-mod {
+
+    &.active {
+      transform: translateX(0%);
+    }
+
+    @include tablet {
+      position: absolute;
+      z-index: 100;
+
+      transform: translateX(100%);
+      right: 0;
+      top: 0;
+
+      width: 320px;
+      min-width: 50%;
+      min-height: 100vh;
+
+      transition: transform ease 0.2s;
+    }
+
   }
 }
 
@@ -40,6 +67,11 @@
   align-items: center;
 
   padding: 0 15px;
+
+  @include tablet {
+    padding: 15px 15px;
+    display: none;
+  }
 }
 
 .header__callback {
@@ -47,6 +79,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  @include tablet {
+    display: none;
+  }
 }
 
 .header__phon {
@@ -63,6 +99,12 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+
+  @include tablet {
+    margin-top: 50px;
+    flex-direction: column;
+    align-items: stretch;
+  }
 }
 
 .nav__item {
@@ -70,12 +112,17 @@
   text-align: center;
   padding: 5px 16px;
 
-  background: rgb(210, 207, 30);
+  &.mobile-mod {
+    display: none;
+  }
 
-  border-right: 1px solid var(--color-black);
+  @include tablet {
 
-  &:last-child {
-    border: 0;
+    padding: 10px 16px;
+
+    &.mobile-mod {
+      display: block;
+    }
   }
 }
 
@@ -85,4 +132,89 @@
   color: var(--color-black);
 
   @include btn-effect-underline;
+}
+
+.burger-w {
+  display: none;
+
+  @include tablet {
+    position: absolute;
+
+    display: block;
+
+    right: 0;
+	}
+}
+
+.burger {
+  display: none;
+
+	position: relative;
+
+  z-index: 1000;
+	padding: 0;
+	width: 34px;
+	height: 27px;
+	background-color: transparent;
+	cursor: pointer;
+
+	@include tablet {
+		display: block;
+	}
+
+  .burger__line {
+    background-color: black;
+		position: absolute;
+		right: 0;
+		top: 50%;
+		width: 50%;
+		height: 5px;
+		transform: translateY(-50%);
+		transition: all 0.3s ease-in-out;
+	}
+
+	.burger__line:nth-child(1),
+  .burger__line:nth-child(2) {
+    background-color: black;
+		right: 0;
+		transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
+	}
+
+	.burger__line:nth-child(1) {
+    transform: translateY(0%);
+    width: 100%;
+		top: 0px;
+	}
+
+	.burger__line:nth-child(2) {
+    transform: translateY(-100%);
+    top: 100%;
+    width: 80%;
+	}
+
+	&:hover .burger__line{
+		width: 100%;
+	}
+
+	&.burger--active {
+		.burger__line:nth-child(1) {
+            width: 100%;
+			top: 50%;
+			transform: rotate(45deg);
+			transition: width 0.3s ease-in-out, transform 0.3s ease-in-out, top 0.3s ease-in-out;
+		}
+
+		.burger__line:nth-child(3) {
+  	  width: 100%;
+			top: 50%;
+			transform: rotate(-45deg);
+			transition: width 0.3s ease-in-out, transform 0.3s ease-in-out, top 0.3s ease-in-out;
+		}
+
+		.burger__line:nth-child(2) {
+      width: 100%;
+			transform: scale(0);
+			transition: width 0.3s ease-in-out, transform 0.3s ease-in-out;
+		}
+	}
 }

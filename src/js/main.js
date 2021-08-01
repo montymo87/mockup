@@ -19,12 +19,11 @@
   function initSliderHero() {
     const swiper = new Swiper('.hero-slider', {
       // Optional parameters
-      // slidesPerView: 1,
-      clickable: true,
-
-      pagination: {
-        el: '.swiper-pagination',
-      },
+      // pagination: {
+      //   el: '.swiper-pagination',
+      //   type: 'bullets',
+      //   clickable: true,
+      // },
 
       navigation: {
         nextEl: '.swiper-button-next',
@@ -118,7 +117,79 @@
   }
 
   function initMenu() {
-      // code
+    var burger = $('.burger');
+
+		function burgerOn() {
+			$('.site-container').toggleClass('is-fixed');
+			$('.burger').toggleClass('burger--active');
+      $('.nav-mod').toggleClass('active');
+		};
+
+		burger.on('click', burgerOn);
+
+  }
+
+  function initDropdown(element) {
+
+    const wrapper = document.querySelector(element);
+
+    function dropdown(e) {
+
+      let dropdownBtn = wrapper.querySelector('.dropdown__btn'),
+        searchDropdownField = wrapper.querySelector('.dropdown__field'),
+        inner = searchDropdownField.firstElementChild.offsetHeight;
+
+      if (e.target.classList.contains('dropdown__btn')) {
+
+        dropdownBtn.classList.toggle('active');
+
+        searchDropdownField.classList.toggle('active');
+
+        searchDropdownField.offsetHeight == inner ? searchDropdownField.style.height = 0 + 'px' :
+        searchDropdownField.style.height = inner + 'px';
+      }
+    }
+
+    if (wrapper) wrapper.addEventListener('click', dropdown)
+
+  }
+
+  function initTabs(element,prefix) {
+
+    let tabWrapper = $(element);
+
+    function tabs(e) {
+      // e.preventDefault();
+      let target = e.target;
+
+      // check prefix
+      if (prefix) {
+        tabWrapper.find('.tab__btn').each(function(i) {
+          $(this).attr('data-findId', `${prefix + i}`)
+        });
+
+        tabWrapper.find('.tab__field').each(function(i) {
+          $(this).attr('id', `${prefix + i}`)
+        });
+      }
+
+      // attr checked on tab__wrapper
+      if ($(target).closest('.tab__btn').attr("data-findId") !== undefined) {
+
+        tabWrapper.find('.tab__wrapper').children('.tab__btn').removeClass('tab-active');
+
+        $(target).closest('.tab__btn').addClass('tab-active');
+
+        tabWrapper.children('.tab__field').each(function () {
+          $(this).removeClass('field-active');
+        });
+
+        // we do id selector when find tab__btn and get hes data attr then just chqnge classs
+        $("#" + $(target).closest('.tab__btn').attr("data-findId")).addClass('field-active');
+      }
+    }
+
+    if (tabWrapper) tabWrapper.click('click', tabs)
   }
 
   function initPopup() {
@@ -129,13 +200,16 @@
    * Initializes logic of a page.
    */
   function init() {
-      initSliderHero();
-      initSliderEquipment();
-      initSliderServices();
-      initSliderSeeMore();
-      initMenu();
-      initPopup();
-      widget()
+    initSliderHero();
+    initSliderEquipment();
+    initSliderServices();
+    initSliderSeeMore();
+    initMenu();
+    initDropdown('.info_dropdown');
+    initDropdown('.social_dropdown');
+    initTabs('.docs__lane-tab','prefix');
+    initPopup();
+    widget()
   }
 
   init();

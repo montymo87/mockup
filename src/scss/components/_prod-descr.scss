@@ -16,15 +16,10 @@
   display: flex;
   justify-content: center;
 
-  // width: 50%;
-  min-width: 400px;
+  min-width: 300px;
   height: auto;
 
   padding: 0px 40px 20px 0;
-
-  &.flex-mod {
-    // justify-content: flex-start;
-  }
 
   &.width-mod {
     min-width: 350px;
@@ -33,6 +28,10 @@
 
 .product-descr__img-in {
   height: 400px;
+
+  @include mobile {
+    height: 300px;
+  }
 }
 
 .product-descr__img {

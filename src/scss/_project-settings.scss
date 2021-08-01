@@ -1,6 +1,10 @@
 .btn-base {
 	@extend %transparent_btn_1;
 	@extend %btn_size_1;
+
+  &.offset-mod {
+    margin-bottom: 10px;
+  }
 }
 
 
@@ -33,6 +37,10 @@
 
   &.mod-offset {
     padding: 0;
+  }
+
+  &.mod-1-offset {
+    padding: 10px;
   }
 }
 
@@ -84,6 +92,15 @@
   &.label-v1 {
     width: 100%;
   }
+
+  .requrst-mod & {
+    width: calc(100% / 3);
+    padding-right: 20px ;
+
+    @include mobile {
+      width: 100%;
+    }
+  }
 }
 
 .form-input {
@@ -106,3 +123,92 @@
     }
   }
 }
+
+.dropdown__field {
+  overflow: hidden;
+  transition: all ease-in 0.3s;
+  height: 0px;
+}
+
+.dropdown__btn {
+  cursor: pointer;
+
+  &.footer-mod {
+    padding:  0 10px 20px 0px;
+    transition: all ease 0.2s;
+
+    @include mobile {
+      &:hover {
+        color: blue;
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .dropdown__field {
+    overflow: visible;
+    height: 100%;
+    height: 100%!important;
+  }
+
+  .dropdown__btn {
+    cursor: default;
+  }
+}
+
+
+// ================== TABS ====================
+
+.docs__lane-tab {
+	border: 1px solid rgba(black, 0.2);
+}
+
+.tab__wrapper {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	background: white;
+	border-bottom: 1px solid rgba(black, 0.2);
+}
+
+.tab__btn {
+	text-align: center;
+	background: #f5f7f9;
+	flex-grow: 1;
+	border-right: 1px solid rgba(black, 0.2);
+	border-top: none;
+	padding: 10px;
+	cursor: pointer;
+	transition: all ease-in 0.2s;
+
+	&.tab-active {
+		background: #fff;
+		border-bottom: none;
+	}
+
+	&:last-child {
+		border-right: none;
+	}
+}
+
+.tab__field {
+	display: none;
+	background: white;
+	border-top: none;
+	min-height: 100px;
+	padding: 20px 20px;
+	color: black;
+}
+
+.tab__field.field-active {
+	display: block;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+
+
+

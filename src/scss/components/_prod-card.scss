@@ -11,7 +11,13 @@
   justify-content: center;
   align-items: flex-start;
 
+  &.grid-mod {
 
+    transition: all ease 0.2s;
+    &:hover {
+      box-shadow: 0px 0px 10px 1px rgba(black, 0.2);
+    }
+  }
 }
 .card__img-w {
   width: 100%;
@@ -24,6 +30,17 @@
   height: 100%;
 }
 .card__info-w {
+
+  &.grid-mod {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    color: black;
+  }
 }
 
 .card-info {

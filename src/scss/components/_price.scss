@@ -14,17 +14,24 @@
   &.header-mod {
     font-size: 18px;
     font-weight: 600;
+
+    @include mobile {
+      display: none;
+    }
   }
 }
 
 .price__coll-w {
   display: flex;
   flex-direction: row;
+
+  @include mobile {
+    flex-direction: column;
+  }
 }
 
 .price__coll {
   width: 100%;
-  max-width: calc(100% / 5);
   min-width: 100px;
 
   padding:  10px;
