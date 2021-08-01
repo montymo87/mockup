@@ -10,7 +10,7 @@
 
   // remove jquery and dev_function after work
   function widget() {
-    pageWidget(['index', 'product_page']);
+    pageWidget(['index', 'product_page', 'choose_tech']);
     getAllClasses('html', '.elements_list');
   }
   // remove jquery and dev_function after work

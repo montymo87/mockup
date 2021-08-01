@@ -43,6 +43,14 @@ ul {
   min-height: 100vh;
 }
 
+.wrapper {
+  flex-grow: 1;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 .is-hidden {
   display: none !important; // stylelint-disable-line declaration-no-important
 }

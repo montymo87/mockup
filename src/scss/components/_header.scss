@@ -14,7 +14,7 @@
   }
 
   &.line_mod {
-    border-top: 1px solid var(--color-black);
+    // border-top: 1px solid var(--color-black);
   }
 
   &.offset_mod {
@@ -55,6 +55,7 @@
 }
 
 .nav {
+  width: 100%;
 }
 
 .nav__list {
@@ -65,11 +66,23 @@
 }
 
 .nav__item {
+  flex-grow: 1;
+  text-align: center;
   padding: 5px 16px;
 
-  @include btn-effect-underline;
+  background: rgb(210, 207, 30);
+
+  border-right: 1px solid var(--color-black);
+
+  &:last-child {
+    border: 0;
+  }
 }
 
 .nav__link {
+  padding: 5px 10px;
+
   color: var(--color-black);
+
+  @include btn-effect-underline;
 }
